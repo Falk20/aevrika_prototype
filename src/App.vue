@@ -1,32 +1,44 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <el-container direction="vertical" class="ae">
+    <Header />
+    <el-container class="ae__aside-main-container">
+      <Sidebar />
+      <el-container direction="vertical" class="ae__main-container">
+        <router-view />
+        <Footer />
+      </el-container>
+    </el-container>
+  </el-container>
 </template>
 
+<script>
+import Sidebar from "@/components/Sidebar";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+export default {
+  name: "app",
+
+  components: {
+    Sidebar,
+    Header,
+    Footer,
+  },
+};
+</script>
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.ae__aside-main-container {
+  margin-top: 60px;
+  min-height: calc(100vh - 60px);
 }
 
-#nav {
-  padding: 30px;
-}
+.ae__main-container {
+  margin-left: 200px;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  display: grid !important;
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+  grid-template-rows: 1fr 60px;
 }
 </style>
