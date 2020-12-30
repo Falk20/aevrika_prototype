@@ -3,7 +3,11 @@
     <Header />
     <el-container class="ae__aside-main-container">
       <Sidebar />
-      <el-container direction="vertical" class="ae__main-container">
+      <el-container
+        direction="vertical"
+        class="ae__main-container"
+        :class="{ 'ae__main-container--mobile': isMobile }"
+      >
         <router-view />
         <Footer />
       </el-container>
@@ -15,6 +19,7 @@
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { mapGetters } from "vuex";
 
 export default {
   name: "app",
@@ -23,6 +28,10 @@ export default {
     Sidebar,
     Header,
     Footer,
+  },
+
+  computed: {
+    ...mapGetters(["isMobile"]),
   },
 };
 </script>
@@ -39,6 +48,10 @@ export default {
 
   display: grid !important;
 
-  grid-template-rows: 1fr 60px;
+  grid-template-rows: 1fr 100px;
+}
+
+.ae__main-container--mobile {
+  margin-left: 0;
 }
 </style>

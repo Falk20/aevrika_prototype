@@ -1,5 +1,5 @@
 <template>
-  <el-footer class="ae__footer">
+  <el-footer height="100px" class="ae__footer">
     <p>Прототип проекта компании Эврика</p>
   </el-footer>
 </template>

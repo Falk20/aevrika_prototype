@@ -1,6 +1,9 @@
 <template>
   <el-header class="ae__header">
-    <h1 class="ae__header-title">{{ title }}</h1>
+    <div class="ae__header__title-container">
+      <h1 class="ae__header__title">{{ title }}</h1>
+    </div>
+    <div></div>
   </el-header>
 </template>
 
@@ -24,12 +27,21 @@ export default {
 
   background: var(--main-color);
 
-  display: flex;
+  display: grid;
 
+  grid-template-columns: 2fr 1fr;
+
+  /* display: flex;
+
+  align-items: center; */
+}
+
+.ae__header__title-container {
+  display: flex;
   align-items: center;
 }
 
-.ae__header-title {
+.ae__header__title {
   font-size: 24px;
 
   color: var(--white);
