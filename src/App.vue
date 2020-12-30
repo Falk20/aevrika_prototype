@@ -8,7 +8,7 @@
         class="ae__main-container"
         :class="{ 'ae__main-container--mobile': isMobile }"
       >
-        <router-view />
+        <router-view class="ae__main" />
         <Footer />
       </el-container>
     </el-container>
@@ -53,5 +53,9 @@ export default {
 
 .ae__main-container--mobile {
   margin-left: 0;
+}
+
+.ae__main {
+  background: var(--secondary-color);
 }
 </style>

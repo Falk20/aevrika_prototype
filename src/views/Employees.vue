@@ -1,10 +1,16 @@
 <template>
-  <el-main>employees</el-main>
+  <el-main>
+    <EmployeesList />
+  </el-main>
 </template>
 
 <script>
+import EmployeesList from "@/components/widgets/EmployeesList";
+
 export default {
   name: "employees",
-  components: {},
+  components: {
+    EmployeesList,
+  },
 };
 </script>
