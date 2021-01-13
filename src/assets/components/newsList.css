@@ -43,7 +43,7 @@
 
 @supports (-webkit-text-stroke: 1px var(--white)) { /* если есть поддержка свойства: невидимый текст посетителям не понравится */
   .news-list__item-header {
-    color: var(--white);
+    color: var(--light-gray);
     -webkit-text-stroke: 0.04em var(--main-color);
   }
 }
