@@ -8,7 +8,6 @@
       :interval="6000"
       v-loading="loading"
       height="400px"
-      :autoplay="false"
     >
       <el-carousel-item v-for="news in newsList" :key="news.id">
         <NewsItem :news="news" />
