@@ -3,6 +3,7 @@
     <h2 class="widget__title">Новости</h2>
 
     <el-carousel
+      type="card"
       class="widget__body widget__body--carousel news-list"
       :interval="6000"
       v-loading="loading"
