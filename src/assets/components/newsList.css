@@ -1,3 +1,7 @@
+.news-list {
+  margin-top: 24px;
+}
+
 .news-list .el-carousel__indicator .el-carousel__button {
   background-color: var(--main-color);
 }

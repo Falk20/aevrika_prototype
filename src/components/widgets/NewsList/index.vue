@@ -4,7 +4,7 @@
 
     <el-carousel
       type="card"
-      class="widget__body widget__body--carousel news-list"
+      class="news-list"
       :interval="6000"
       v-loading="loading"
       height="400px"
