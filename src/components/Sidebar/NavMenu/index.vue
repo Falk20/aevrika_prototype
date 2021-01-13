@@ -23,7 +23,9 @@ export default {
 
   computed: {
     menuItems() {
-      return this.$router.options.routes;
+      return this.$router.options.routes.filter(
+        (route) => route.meta && route.meta.label
+      );
     },
     currentRoute() {
       return (

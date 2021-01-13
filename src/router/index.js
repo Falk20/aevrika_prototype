@@ -8,7 +8,7 @@ const routes = [
     path: "/",
     name: "Home",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Home.vue"),
+      import(/* webpackChunkName: "pages" */ "../views/Home.vue"),
     meta: {
       icon: "el-icon-s-home",
       label: "Главная",
@@ -18,7 +18,7 @@ const routes = [
     path: "/employees",
     name: "Employees",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Employees.vue"),
+      import(/* webpackChunkName: "pages" */ "../views/Employees.vue"),
     meta: {
       icon: "el-icon-s-custom",
       label: "Сотрудники",
@@ -27,15 +27,18 @@ const routes = [
   {
     path: "/news",
     name: "News",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/News.vue"),
+      import(/* webpackChunkName: "pages" */ "../views/News.vue"),
     meta: {
       icon: "el-icon-news",
       label: "Новости",
     },
+  },
+  {
+    path: "/news-detail/:id",
+    name: "NewsDetail",
+    component: () =>
+      import(/* webpackChunkName: "pages" */ "../views/NewsDetail.vue"),
   },
 ];
 

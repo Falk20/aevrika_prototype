@@ -11,6 +11,10 @@
   border-radius: 4px;
 }
 
+.widget__body--carousel {
+  padding: 0;
+}
+
 .widget__toolbar {
   margin-top: 24px;
 

@@ -12,6 +12,9 @@ import {
   Input,
   Pagination,
   Image,
+  Dialog,
+  Carousel,
+  CarouselItem,
 } from "element-ui";
 import lang from "element-ui/lib/locale/lang/ru-RU";
 import locale from "element-ui/lib/locale";
@@ -29,6 +32,9 @@ Vue.use(MenuItem);
 Vue.use(Input);
 Vue.use(Pagination);
 Vue.use(Image);
+Vue.use(Dialog);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
 
 Vue.use(Loading.directive);
 
