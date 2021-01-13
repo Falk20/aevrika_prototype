@@ -1,5 +1,6 @@
 import Vue from "vue";
 import {
+  Loading,
   Button,
   Container,
   Header,
@@ -8,6 +9,8 @@ import {
   Footer,
   Menu,
   MenuItem,
+  Input,
+  Pagination,
 } from "element-ui";
 import lang from "element-ui/lib/locale/lang/ru-RU";
 import locale from "element-ui/lib/locale";
@@ -22,3 +25,9 @@ Vue.use(Main);
 Vue.use(Footer);
 Vue.use(Menu);
 Vue.use(MenuItem);
+Vue.use(Input);
+Vue.use(Pagination);
+
+Vue.use(Loading.directive);
+
+Vue.prototype.$loading = Loading.service;
