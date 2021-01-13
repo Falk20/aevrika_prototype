@@ -17,10 +17,12 @@
       class="widget__body"
     >
       <p v-if="errored">Ошибка загрузки данных</p>
-      <template v-else>
+      <template v-else-if="employees">
         <p v-if="employees.length === 0">
           По запросу "{{ $route.query.search }}" ничего не найдено
         </p>
+
+        <EmployeesList v-else :employees="employees" />
 
         <Paginator isQuery :totalCount="totalCount" :limit="limit" />
       </template>
@@ -36,13 +38,15 @@ let cancel;
 
 import SearchString from "@/components/tools/SearchString";
 import Paginator from "@/components/tools/Paginator";
+import EmployeesList from "./EmployeesList";
 
 export default {
-  name: "employees-list",
+  name: "employees",
 
   components: {
     SearchString,
     Paginator,
+    EmployeesList,
   },
 
   data() {
