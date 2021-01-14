@@ -65,7 +65,11 @@
                 </el-image>
               </el-col>
               <el-col> -->
-            <input type="file" @change="setAvatar" />
+            <input
+              type="file"
+              @change="setAvatar"
+              accept="image/png, image/jpeg"
+            />
             <!-- </el-col>
             </el-row> -->
           </el-form-item>
