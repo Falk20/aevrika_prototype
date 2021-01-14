@@ -55,7 +55,7 @@ export default {
       totalCount: null,
       errored: false,
       loading: false,
-      limit: 3,
+      limit: 10,
     };
   },
 
