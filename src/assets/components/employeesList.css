@@ -2,7 +2,7 @@
   display: grid;
   gap: 24px;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 
   margin-bottom: 24px;
 }
@@ -14,27 +14,18 @@
   padding: 8px 44px 8px 8px;
   border-radius: 8px;
 
-
   display: grid;
   gap: 16px;
 
   grid-template-columns: 64px 1fr;
 }
 
-.employees-list__item:hover{
-  background: var(--light-gray);
-}
-
 .employees-list__item .btn-edit {
-  display: none;
+  display: block;
 
   position: absolute;
   top: 0;
   right: 0;
-}
-
-.employees-list__item:hover .btn-edit {
-  display: block;
 }
 
 .employees-list__item__info {
@@ -57,4 +48,28 @@
   background: var(--light-gray);
   color: var(--gray);
   font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .employees-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .employees-list__item:hover {
+    background: var(--light-gray);
+  }
+
+  .employees-list__item .btn-edit {
+    display: none;
+  }
+
+  .employees-list__item:hover .btn-edit {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .employees-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

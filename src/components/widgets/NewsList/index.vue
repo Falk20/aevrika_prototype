@@ -3,11 +3,10 @@
     <h2 class="widget__title">Новости</h2>
 
     <el-carousel
-      type="card"
       class="news-list"
       :interval="6000"
       v-loading="loading"
-      height="400px"
+      :height="bannerHeight"
     >
       <el-carousel-item v-for="news in newsList" :key="news.id">
         <NewsItem :news="news" />
@@ -20,6 +19,7 @@
 import Axios from "axios";
 
 import NewsItem from "./NewsItem";
+import { mapGetters } from "vuex";
 
 export default {
   name: "news-list",
@@ -35,6 +35,13 @@ export default {
 
       newsList: [],
     };
+  },
+
+  computed: {
+    ...mapGetters(["isMobile"]),
+    bannerHeight() {
+      return this.isMobile ? "200px" : "400px";
+    },
   },
 
   methods: {
