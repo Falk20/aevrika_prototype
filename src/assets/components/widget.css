@@ -1,5 +1,7 @@
 .widget__title {
   font-size: 24px;
+
+  margin-bottom: 0.5em;
 }
 
 .widget__body {

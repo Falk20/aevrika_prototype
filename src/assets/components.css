@@ -1,3 +1,4 @@
-@import './components/widget.css';
-@import './components/employeesList.css';
-@import './components/newsList.css';
+@import "./components/widget.css";
+@import "./components/employeesList.css";
+@import "./components/newsList.css";
+@import "./components/newsDetail.css";

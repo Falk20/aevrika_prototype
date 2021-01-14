@@ -12,6 +12,7 @@ const routes = [
     meta: {
       icon: "el-icon-s-home",
       label: "Главная",
+      inMenu: true,
     },
   },
   {
@@ -22,6 +23,7 @@ const routes = [
     meta: {
       icon: "el-icon-s-custom",
       label: "Сотрудники",
+      inMenu: true,
     },
   },
   {
@@ -32,6 +34,7 @@ const routes = [
     meta: {
       icon: "el-icon-news",
       label: "Новости",
+      inMenu: true,
     },
   },
   {
@@ -39,6 +42,10 @@ const routes = [
     name: "NewsDetail",
     component: () =>
       import(/* webpackChunkName: "pages" */ "../views/NewsDetail.vue"),
+    meta: {
+      icon: "el-icon-news",
+      label: "Детальная новости",
+    },
   },
 ];
 

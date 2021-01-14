@@ -24,7 +24,7 @@ export default {
   computed: {
     menuItems() {
       return this.$router.options.routes.filter(
-        (route) => route.meta && route.meta.label
+        (route) => route.meta && route.meta.inMenu
       );
     },
     currentRoute() {

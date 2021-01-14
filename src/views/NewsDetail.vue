@@ -1,10 +1,16 @@
 <template>
-  <el-main> kek </el-main>
+  <el-main>
+    <News />
+  </el-main>
 </template>
 
 <script>
+import News from "@/components/widgets/News";
+
 export default {
   name: "news-deatil",
-  components: {},
+  components: {
+    News,
+  },
 };
 </script>
