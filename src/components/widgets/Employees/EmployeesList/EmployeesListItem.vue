@@ -21,6 +21,7 @@
       type="primary"
       icon="el-icon-edit"
       size="mini"
+      @click="openEditDialog"
     />
   </div>
 </template>
@@ -46,7 +47,12 @@ export default {
     },
     avatar() {
       const { employee } = this;
-      return `data:image/png;base64, ${employee.avatar}`;
+      if (employee.avatar) {
+        return employee.avatar.startsWith("data:")
+          ? employee.avatar
+          : `data:image/png; base64, ${employee.avatar}`;
+      }
+      return null;
     },
 
     birthdate() {
@@ -57,6 +63,12 @@ export default {
         month: "numeric",
         year: "numeric",
       });
+    },
+  },
+
+  methods: {
+    openEditDialog() {
+      this.$emit("open-edit-dialog", { employee: this.employee });
     },
   },
 };

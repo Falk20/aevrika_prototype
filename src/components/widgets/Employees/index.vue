@@ -8,6 +8,7 @@
         type="primary"
         class="widget__toolbar-add"
         icon="el-icon-plus"
+        @click="openCreateDialog"
       />
     </div>
 
@@ -22,16 +23,29 @@
           По запросу "{{ $route.query.search }}" ничего не найдено
         </p>
 
-        <EmployeesList v-else :employees="employees" />
+        <EmployeesList
+          v-else
+          :employees="employees"
+          @open-edit-dialog="openEditDialog($event)"
+        />
 
         <Paginator isQuery :totalCount="totalCount" :limit="limit" />
       </template>
     </div>
+
+    <EmployeeForm
+      v-model="showDialog"
+      :editingEmployee="editingEmployee"
+      @success="updateAfterChange"
+      @close-dialog="clearEditing"
+    />
   </section>
 </template>
 
 <script>
 import Axios from "axios";
+
+import EmployeeForm from "./EmployeeForm";
 
 const CancelToken = Axios.CancelToken;
 let cancel;
@@ -47,6 +61,7 @@ export default {
     SearchString,
     Paginator,
     EmployeesList,
+    EmployeeForm,
   },
 
   data() {
@@ -56,6 +71,9 @@ export default {
       errored: false,
       loading: false,
       limit: 10,
+
+      editingEmployee: null,
+      showDialog: false,
     };
   },
 
@@ -94,6 +112,25 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+
+    openEditDialog(payload) {
+      this.editingEmployee = payload.employee;
+      this.showDialog = true;
+    },
+
+    openCreateDialog() {
+      this.showDialog = true;
+    },
+
+    clearEditing() {
+      this.editingEmployee = null;
+    },
+
+    updateAfterChange() {
+      this.showDialog = false;
+      this.getEmployees(this.$route.query.search, this.limit, this.offset);
+      this.clearEditing();
     },
   },
 

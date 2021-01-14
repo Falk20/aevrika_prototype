@@ -73,3 +73,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.form__error {
+  color: #f56c6c;
+}

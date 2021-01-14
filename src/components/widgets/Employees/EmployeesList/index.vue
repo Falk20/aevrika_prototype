@@ -4,6 +4,7 @@
       v-for="employee in employees"
       :key="employee.id"
       :employee="employee"
+      @open-edit-dialog="openEditDialog($event)"
     />
   </div>
 </template>
@@ -21,6 +22,12 @@ export default {
   props: {
     employees: {
       type: Array,
+    },
+  },
+
+  methods: {
+    openEditDialog(payload) {
+      this.$emit("open-edit-dialog", payload);
     },
   },
 };

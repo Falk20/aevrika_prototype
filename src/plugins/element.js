@@ -15,6 +15,12 @@ import {
   Dialog,
   Carousel,
   CarouselItem,
+  Form,
+  FormItem,
+  DatePicker,
+  Col,
+  Row,
+  Upload,
 } from "element-ui";
 import lang from "element-ui/lib/locale/lang/ru-RU";
 import locale from "element-ui/lib/locale";
@@ -35,6 +41,12 @@ Vue.use(Image);
 Vue.use(Dialog);
 Vue.use(Carousel);
 Vue.use(CarouselItem);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(DatePicker);
+Vue.use(Col);
+Vue.use(Row);
+Vue.use(Upload);
 
 Vue.use(Loading.directive);
 
